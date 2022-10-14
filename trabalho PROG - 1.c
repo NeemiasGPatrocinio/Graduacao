@@ -1,3 +1,7 @@
+//Em desenvolvimento
+//neemias Patrocinio
+//c++
+
 #include <stdio.h>
 #include <string.h>
  
@@ -38,7 +42,7 @@ int main( ) {
  struct Livro entrada(struct Livro x[]);	   /* Entrada de Dados*/
  
     do{
-	printf (" MENU DE OPÇOES ");
+	printf (" MENU DE OPÃ‡OES ");
 	printf (" Digite 1 Para Adicionar ");
 	printf (" Digite 2 Para Exibir ");
 	printf ("Digite 0 Para Sair ");
