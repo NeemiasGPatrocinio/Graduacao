@@ -1,0 +1,736 @@
+#include <iostream>
+
+	#include <GL\glut.h> 
+void redesenha(){ 
+glClearColor(1.0, 1.0, 1.0, 0.0); 
+glClear(GL_COLOR_BUFFER_BIT );  
+glPointSize(5.0); 
+glColor3f(1.0, 0.0, 0.0);  
+glBegin(GL_POINTS);   
+glVertex2f(0, 0); 
+glEnd(); 
+glFlush(); 
+} 
+int main(int argc, char **argv) { 
+glutInit(&argc, argv); 
+glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB ); 
+glutInitWindowSize(400, 400); 
+glutInitWindowPosition(0, 0); 
+glutCreateWindow("Projeto TESTE 01"); 
+gluOrtho2D(-20, 20, -20, 20); 
+glutDisplayFunc(redesenha); 
+glutMainLoop(); 
+return(0); 
+}
+
+
+	using namespace std;	
+
+
+	int aux = 0;	
+
+	float R = 0, G = 0, B = 0; 
+	float xa1 = 100, ya1 = 100;
+	float xb1 = 650, yb1 = 100;
+	float xc1 = 375, yc1 = 650;
+	float xa2 = 100, ya2 = 100;
+	float xb2 = 650, yb2 = 100;
+	float xc2 = 100, yc2 = 650;
+	float xa3 = 100, ya3 = 100;
+	float xb3 = 650, yb3 = 100;
+	float xc3 = 650, yc3 = 650;
+	float xd3 = 100, yd3 = 650;	
+	float xa4 = 100, ya4 = 100;
+	float xb4 = 250, yb4 = 350;
+	float xc4 = 550, yc4 = 350;
+	float xd4 = 700, yd4 = 100;	
+
+
+
+//Layout
+
+void Layout(){
+
+
+	//Cores
+
+
+	glBegin(GL_QUADS);
+
+
+	//Amarelo 
+
+	glColor3f(1,1,0);
+
+	  glVertex2f(750,700);
+
+	  glVertex2f(850,700);
+
+	  glVertex2f(850,750);
+
+	  glVertex2f(750,750);
+
+
+	//Vermelho
+	glColor3f(1,0,0);
+
+	  glVertex2f(750,650);
+
+	  glVertex2f(850,650);
+
+	  glVertex2f(850,700);
+
+	  glVertex2f(750,700);
+
+
+	//Verde
+	glColor3f(0,1,0);
+
+	  glVertex2f(750,600);
+
+	  glVertex2f(850,600);
+
+	  glVertex2f(850,650);
+
+	  glVertex2f(750,650); 
+
+
+	//Azul
+	glColor3f(0,0,1);
+
+	  glVertex2f(750,550);
+
+	  glVertex2f(850,550);
+
+	  glVertex2f(850,600);
+
+	  glVertex2f(750,600);
+
+
+	//Magenta
+	glColor3f(1,0,1);
+
+	  glVertex2f(750,500);
+
+	  glVertex2f(850,500);
+
+	  glVertex2f(850,550);
+
+	  glVertex2f(750,550);
+
+
+	//Lilas (0.6,0.4,1) 
+	glColor3f(0.6,0.4,1);
+
+	  glVertex2f(750,450);
+
+	  glVertex2f(850,450);
+
+	  glVertex2f(850,500);
+
+	  glVertex2f(750,500); 
+
+
+	//Preto
+	glColor3f(0,0,0);
+
+	  glVertex2f(750,400);
+
+	  glVertex2f(850,400);
+
+	  glVertex2f(850,450);
+
+	  glVertex2f(750,450);  
+
+
+	glEnd();
+
+
+	// Triangulos
+
+	 glColor3f(0,0,0);
+	glBegin(GL_TRIANGLES);
+
+	//Triangulo Isosceles
+		  glVertex2f(770,320);
+		  glVertex2f(830,320);
+		  glVertex2f(800,380);
+	 
+
+	//Triangulo Retangulo
+		  glVertex2f(770,220);
+		  glVertex2f(830,220);
+		  glVertex2f(770,280);
+	glEnd();
+
+	//Quadrado
+	 glColor3f(0,0,0);
+	  glBegin(GL_QUADS);	
+	  glVertex2f(765,115);
+	  glVertex2f(765,175 );
+	  glVertex2f(835,175);
+  	  glVertex2f(835,115);
+	glEnd(); 
+
+	//Desenho a sua escolha
+	glColor3f(0,0,0);
+	glBegin(GL_QUADS);	
+	  glVertex2f(760,25);
+	  glVertex2f(785,60);
+	  glVertex2f(820,60);
+  	  glVertex2f(840,25);
+
+	glEnd();
+	
+
+
+	//Linhas de Contorno
+
+
+	glLineWidth(3);
+
+
+	glBegin(GL_LINE_LOOP);
+
+	   glVertex2f(  0,  0);
+
+	   glVertex2f(850,  0);
+
+	   glVertex2f(850,750);
+
+	   glVertex2f(  0,750);
+
+	glEnd();
+
+
+	glBegin(GL_LINES);
+
+	   for(int i = 400; i < 750; i=i+50){
+
+	   glVertex2f(750,  i);
+
+	   glVertex2f(850,  i);        
+
+	}
+
+	  
+
+
+	   for(int i = 000; i < 400; i=i+100){
+
+		   glVertex2f(750,  i);
+
+		   glVertex2f(850,  i);        
+
+	   }
+
+
+	   glVertex2f(750,  0);
+
+	   glVertex2f(750,750);
+
+
+	glEnd();
+
+
+}
+
+
+//Triangulo	
+
+void Objeto1(){	
+//Triangulo Isosceles
+	 glColor3f(R,G,B);
+	glBegin(GL_TRIANGLES);
+
+	//Triangulo Isosceles
+	
+		  glVertex2f(xa1,ya1);
+		  glVertex2f(xb1,yb1);
+		  glVertex2f(xc1,yc1);
+	glEnd();
+}
+
+	
+
+void Objeto2(){
+	
+		//Triangulo Retangulo
+		 glColor3f(R,G,B);
+		 glBegin(GL_TRIANGLES);		 
+		  glVertex2f(xa2,ya2);
+		  glVertex2f(xb2,yb2);
+		  glVertex2f(xc2,yc2);
+		  
+	glEnd();
+	
+}
+
+//Quadrado
+
+void Objeto3(){
+//Quadrado
+	 glColor3f(R,G,B);
+	  glBegin(GL_QUADS);	
+	  glVertex2f(xa3,ya3);
+	  glVertex2f(xb3,yb3);
+	  glVertex2f(xc3,yc3);
+  	  glVertex2f(xd3,yd3);
+  	  
+	glEnd();
+	
+}
+
+//Esolha 	
+
+void Objeto4(){	
+	//Desenho a sua escolha
+	glColor3f(R,G,B);
+	glBegin(GL_QUADS);	
+	  glVertex2f(xa4,ya4);
+	  glVertex2f(xb4,yb4);
+	  glVertex2f(xc4,yc4);
+  	  glVertex2f(xd4,yd4);
+
+	glEnd();
+
+}
+
+
+
+//funcao que controla o conteudo da tela
+
+void Desenho(){
+
+
+	glClearColor(0.9,0.9,0.9,1);
+
+	glClear(GL_COLOR_BUFFER_BIT );  
+
+
+	// controle dos objetos
+
+	   if (aux == 1) Objeto1();
+	   if (aux == 2) Objeto2();
+	   if (aux == 3) Objeto3();
+	   if (aux == 4) Objeto4();
+	   
+
+
+	   
+
+	Layout();
+
+
+	glFlush(); 
+
+} 
+
+
+
+void Teclado(unsigned char key, int x, int y){
+
+
+	switch(key) {
+
+
+	case '0':	
+
+	  aux = 0;
+
+	break;
+	
+	case '1':	
+
+	  aux = 1;
+	break;  
+	
+	case '2':	
+
+	  aux = 2;
+
+	break;
+	
+	case '3':	
+
+	  aux = 3;
+
+	break;
+	
+	case '4':	
+
+	 aux = 4;
+	  
+	break;
+	
+		break;
+
+	case '+':
+	
+	if (aux==1){
+			if (xb1 < 650){
+			
+			xa1 = xa1 * 1.2;
+			xb1 = xb1 * 1.2;
+			xc1 = xc1 * 1.2;
+			ya1 = ya1 * 1.2;
+			yb1 = yb1 * 1.2;
+			yc1 = yc1 * 1.2;
+			}
+		}
+		 else if (aux==2){
+		 	if (xb2 < 650){
+		 	xa2 = xa2 * 1.2;
+			xb2 = xb2 * 1.2;
+			xc2 = xc2 * 1.2;
+			ya2 = ya2 * 1.2;
+			yb2 = yb2 * 1.2;
+			yc2 = yc2 * 1.2;
+			}
+		}
+		
+		else if (aux==3){
+		if (xc3 < 650){
+			xa3 = xa3 * 1.2;
+			xb3 = xb3 * 1.2;
+			xc3 = xc3 * 1.2;
+			xd3 = xd3 * 1.2;
+			ya3 = ya3 * 1.2;
+			yb3 = yb3 * 1.2;
+			yc3 = yc3 * 1.2;
+			yd3 = yd3 * 1.2;
+		}
+		}
+		else if (aux==4){
+		if (xd4 < 700){
+			xa4 = xa4 * 1.2;
+			xb4 = xb4 * 1.2;
+			xc4 = xc4 * 1.2;
+			xd4 = xd4 * 1.2;
+			ya4 = ya4 * 1.2;
+			yb4 = yb4 * 1.2;
+			yc4 = yc4 * 1.2;
+			yd4 = yd4 * 1.2;
+		}
+		}
+	
+	break;
+	
+		break;
+
+	case '-':
+	
+	if (aux==1){
+			
+			xa1 = xa1 / 1.2;
+			xb1 = xb1 / 1.2;
+			xc1 = xc1 / 1.2;
+			ya1 = ya1 / 1.2;
+			yb1 = yb1 / 1.2;
+			yc1 = yc1 / 1.2;
+		}
+		 else if (aux==2){
+		 	
+		 	xa2 = xa2 / 1.2;
+			xb2 = xb2 / 1.2;
+			xc2 = xc2 / 1.2;
+			ya2 = ya2 / 1.2;
+			yb2 = yb2 / 1.2;
+			yc2 = yc2 / 1.2;
+		}
+		
+		else if (aux==3){
+		
+			xa3 = xa3 / 1.2;
+			xb3 = xb3 / 1.2;
+			xc3 = xc3 / 1.2;
+			xd3 = xd3 / 1.2;
+			ya3 = ya3 / 1.2;
+			yb3 = yb3 / 1.2;
+			yc3 = yc3 / 1.2;
+			yd3 = yd3 / 1.2;
+		}
+		else if (aux==4){
+		
+			xa4 = xa4 / 1.2;
+			xb4 = xb4 / 1.2;
+			xc4 = xc4 / 1.2;
+			xd4 = xd4 / 1.2;
+			ya4 = ya4 / 1.2;
+			yb4 = yb4 / 1.2;
+			yc4 = yc4 / 1.2;
+			yd4 = yd4 / 1.2;
+		}	
+
+	break;
+
+
+	}
+
+
+	Desenho();
+
+
+}
+
+
+void TeclasEspeciais(int key, int x, int y) {
+
+	switch(key) {
+
+	case GLUT_KEY_LEFT:
+		if (aux==1){
+			
+			xa1 = xa1 - 5;
+			xb1 = xb1 - 5;
+			xc1 = xc1 - 5;
+		}
+		 else if (aux==2){
+		 	
+		 	xa2 = xa2 - 5;
+			xb2 = xb2 - 5;
+			xc2 = xc2 - 5;
+		}
+		
+		else if (aux==3){
+		
+			xa3 = xa3 - 5;
+			xb3 = xb3 - 5;
+			xc3 = xc3 - 5;
+			xd3 = xd3 - 5;
+		}
+		else if (aux==4){
+		
+			xa4 = xa4 - 5;
+			xb4 = xb4 - 5;
+			xc4 = xc4 - 5;
+			xd4 = xd4 - 5;
+			
+		}
+		
+
+	break;
+	
+	case GLUT_KEY_RIGHT:
+		if (aux==1){
+			
+			xa1 = xa1 + 5;
+			xb1 = xb1 + 5;
+			xc1 = xc1 + 5;
+		}
+		 else if (aux==2){
+		 	
+		 	xa2 = xa2 + 5;
+			xb2 = xb2 + 5;
+			xc2 = xc2 + 5;
+		}
+		
+		else if (aux==3){
+		
+			xa3 = xa3 + 5;
+			xb3 = xb3 + 5;
+			xc3 = xc3 + 5;
+			xd3 = xd3 + 5;
+		}
+		else if (aux==4){
+		
+			xa4 = xa4 + 5;
+			xb4 = xb4 + 5;
+			xc4 = xc4 + 5;
+			xd4 = xd4 + 5;
+		}
+		
+
+	break;
+
+
+	case GLUT_KEY_UP:
+		if (aux==1){
+			
+			ya1 = ya1 + 5;
+			yb1 = yb1 + 5;
+			yc1 = yc1 + 5;
+		}
+		 else if (aux==2){
+		 	
+		 	ya2 = ya2 + 5;
+			yb2 = yb2 + 5;
+			yc2 = yc2 + 5;
+		}
+		
+		else if (aux==3){
+		
+			ya3 = ya3 + 5;
+			yb3 = yb3 + 5;
+			yc3 = yc3 + 5;
+			yd3 = yd3 + 5;
+		}
+		else if (aux==4){
+		
+			ya4 = ya4 + 5;
+			yb4 = yb4 + 5;
+			yc4 = yc4 + 5;
+			yd4 = yd4 + 5;
+		}
+		
+
+	break;
+	
+	case GLUT_KEY_DOWN:
+		if (aux==1){
+			
+			ya1 = ya1 - 5;
+			yb1 = yb1 - 5;
+			yc1 = yc1 - 5;
+		}
+		 else if (aux==2){
+		 	
+		 	ya2 = ya2 - 5;
+			yb2 = yb2 - 5;
+			yc2 = yc2 - 5;
+		}
+		
+		else if (aux==3){
+		
+			ya3 = ya3 - 5;
+			yb3 = yb3 - 5;
+			yc3 = yc3 - 5;
+			yd3 = yd3 - 5;
+		}
+		else if (aux==4){
+		
+			ya4 = ya4 - 5;
+			yb4 = yb4 - 5;
+			yc4 = yc4 - 5;
+			yd4 = yd4 - 5;
+		}
+		
+
+	break;
+
+
+	case GLUT_KEY_HOME:
+		
+	 aux = 0;	
+
+	 R = 0, G = 0, B = 0; 
+	 xa1 = 100, ya1 = 100;
+	 xb1 = 650, yb1 = 100;
+	 xc1 = 375, yc1 = 650;
+	 xa2 = 100, ya2 = 100;
+	 xb2 = 650, yb2 = 100;
+	 xc2 = 100, yc2 = 650;
+	 xa3 = 100, ya3 = 100;
+	 xb3 = 650, yb3 = 100;
+	 xc3 = 650, yc3 = 650;
+	 xd3 = 100, yd3 = 650;	
+	 xa4 = 100, ya4 = 100;
+	 xb4 = 250, yb4 = 350;
+	 xc4 = 550, yc4 = 350;
+	 xd4 = 700, yd4 = 100;
+		
+
+	break;
+
+
+	}
+
+	Desenho();	
+
+}
+
+
+void Mouse(int b,int state,int x, int y){
+
+
+	if(b == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+
+
+	 if ( x > 750){
+
+	  if ( y < 50){
+
+	      R = 1 ; G = 1 ; B = 0;
+
+		} 
+
+		else if( y < 100){
+		 R = 1 ; G = 0 ; B = 0;
+		 	
+
+		}	else if( y < 150){
+		 R = 0 ; G = 1 ; B = 0;
+		 	
+
+		}	else if( y < 200){
+		 R = 0 ; G = 0 ; B = 1;
+		 	
+
+		}	else if( y < 250){
+		 R = 1 ; G = 0 ; B = 1;
+		 	
+
+		}	else if( y < 300){
+		 R = 0.6 ; G = 0.4 ; B = 1;
+		 	
+
+			}else if( y < 350){
+		 R = 0 ; G = 0 ; B = 0;
+		 	
+		}
+		else if( y < 450){
+		 aux=1;
+		 	
+
+		 } else if( y < 550){
+		 aux=2;
+		 
+		 }	else if( y < 650){
+		 aux=3;
+		 	
+
+		 }	else if( y < 750){
+		 aux=4;		 	
+
+		}		
+
+	  }
+
+	}
+
+	Desenho();	
+
+}
+
+
+//funcao que controla a estrutura da tela
+
+int main(int argc, char **argv) { 
+
+
+	glutInit(&argc, argv);
+
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB ); 
+
+	glutInitWindowSize(850,750);
+
+	glutInitWindowPosition(150, 0);
+
+	glutCreateWindow("Projeto de Computacao Grafica"); 
+
+	gluOrtho2D(0,850,0,750);
+
+	glutMouseFunc(Mouse);
+
+	glutKeyboardFunc(Teclado);
+
+	glutSpecialFunc(TeclasEspeciais); 
+
+	glutDisplayFunc(Desenho);
+
+	glutMainLoop(); 
+
+
+	return(0); 
+
+}
